@@ -9,6 +9,11 @@
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
     <title>CheckList</title>
     <link rel="icon" type="image/png" href="favicon.png" />
     <link
@@ -27,8 +32,64 @@
         >
       </div>
     </nav>
+    <div class="container">
+      <form id="add-todo-form">
+        <input type="text" name="title" placeholder="Add Task" />
+      </form>
+
+      <ul class="collection">
+        <li class="collection-item">
+          <div>
+            <span>Buying Food</span>
+            <i class="material-icons secondary-content">delete</i>
+            <a href="#modal1" class="modal-trigger secondary-content"
+              ><i class="material-icons">edit</i></a
+            >
+          </div>
+        </li>
+      </ul>
+
+      <a class="waves-effect waves-light btn">Add Task</a>
+
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Modal Header</h4>
+          <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+            >Agree</a
+          >
+        </div>
+      </div>
+    </div>
 
     <!-- Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+      });
+
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from 'firebase/app';
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: 'AIzaSyD0Q8v8Ot8s7QerVIRIwg1xNmMwaeppn4U',
+        authDomain: 'checklist-9d862.firebaseapp.com',
+        projectId: 'checklist-9d862',
+        storageBucket: 'checklist-9d862.appspot.com',
+        messagingSenderId: '253559850436',
+        appId: '1:253559850436:web:145eadebaab84332e59091',
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
