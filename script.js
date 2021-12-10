@@ -1,29 +1,17 @@
-// // Import the functions you need from the SDKs you need
-// import { initializeApp } from 'firebase/app';
-// import { getFirestore, collection } from 'firebase/firestore';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
 
-// // TODO: Add SDKs for Firebase products that you want to use
-// // https://firebase.google.com/docs/web/setup#available-libraries
+import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js';
 
-// // Your web app's Firebase configuration
-// const firebaseConfig = {
-//   apiKey: 'AIzaSyD0Q8v8Ot8s7QerVIRIwg1xNmMwaeppn4U',
-//   authDomain: 'checklist-9d862.firebaseapp.com',
-//   projectId: 'checklist-9d862',
-//   storageBucket: 'checklist-9d862.appspot.com',
-//   messagingSenderId: '253559850436',
-//   appId: '1:253559850436:web:145eadebaab84332e59091',
-// };
+const firebaseConfig = {
+  apiKey: 'AIzaSyCRlQv7O7mZuQ5Od9WTN2Bw_VHLKw1NVmc',
+  authDomain: 'check-4295c.firebaseapp.com',
+  projectId: 'check-4295c',
+  storageBucket: 'check-4295c.appspot.com',
+  messagingSenderId: '383887812191',
+  appId: '1:383887812191:web:5e2b7fc1363299df385dea',
+  measurementId: '${config.measurementId}',
+};
 
 // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// init services
-const db = getFirestore();
-// collection ref
-
-const colRef = collection(db, 'checklist');
-
-// get collection data
-getDocs(colRef).then((snapshot) => {
-  console.log(snapshot);
-});
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
